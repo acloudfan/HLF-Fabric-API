@@ -1,0 +1,18 @@
+{
+  "name": "hlf-course-api",
+  "version": "1.0.0",
+  "description": "This is part of a course on Hyperledger Fabric http://ACloudFan.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "raj@acloudfan.com",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "composer-admin": "^0.16.0",
+    "composer-client": "^0.16.0",
+    "composer-common": "^0.16.0",
+    "composer-connector-embedded": "^0.16.0"
+  }
+}

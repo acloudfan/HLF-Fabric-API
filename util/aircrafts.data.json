@@ -1,0 +1,25 @@
+[
+    
+    {
+        "aircraftId"     :    "CRAFT01",
+        "ownershipType"   :    "LEASED",
+        "firstClassSeats" :      10,
+        "businessClassSeats"  :  10,
+        "economyClassSeats"   :  50
+    },
+    {
+        "aircraftId"     :    "CRAFT02",
+        "ownershipType"   :    "OWNED",
+        "firstClassSeats" :      15,
+        "businessClassSeats"  :  15,
+        "economyClassSeats"   :  150
+    },
+    {
+        "aircraftId"     :    "CRAFT03",
+        "ownershipType"   :    "LEASED",
+        "firstClassSeats" :      5,
+        "businessClassSeats"  :  5,
+        "economyClassSeats"   :  65
+    }
+
+]
