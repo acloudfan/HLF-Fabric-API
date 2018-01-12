@@ -13,6 +13,7 @@
     "composer-admin": "^0.16.0",
     "composer-client": "^0.16.0",
     "composer-common": "^0.16.0",
-    "composer-connector-embedded": "^0.16.0"
+    "composer-connector-embedded": "^0.16.0",
+    "websocket": "^1.0.25"
   }
 }

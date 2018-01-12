@@ -3,6 +3,10 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Pre-Requisites
+ * 1. Launch Fabric - Deploy Aircraft v8
+ * 2. Poupulate the flight data ... use utility or REST Server
+ * 
  * Demostrates the use Client module : query & buildQuery
  * 1. Create the Client Connection
  * 2. Execute a Named Query using Client Module : query()
@@ -26,9 +30,13 @@ function main(error){
         console.log('Received flight count:', results.length)
 
         var   statement = 'SELECT  org.acme.airline.aircraft.Aircraft WHERE (aircraftId == _$id)';
-
+        
+        // #3 Build the query object
         return bnUtil.connection.buildQuery(statement);
+
     }).then((qry)=>{
+
+        // #4 Execute the query
         return bnUtil.connection.query(qry,{id:'CRAFT01'});
     }).then((result)=>{
         console.log('Received aircraft count:', result.length);
