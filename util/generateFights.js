@@ -44,8 +44,8 @@ function  createFlights(number, origin, destination, startDate, frequency, depar
     const  factory = bnDef.getFactory();
 
     var ctr = 0 ;
-    const iterations = 8;
-    for(var i=0; i < 8; i++){
+    const iterations = 4;
+    for(var i=0; i < iterations; i++){
         // Flight scheduled every 3rd day starting from today
         let sched = new Date(x.getTime()+(i+1)*frequency*24*60*60*1000);
         
