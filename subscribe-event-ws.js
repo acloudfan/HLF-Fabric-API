@@ -16,8 +16,9 @@
  * 2. Create a websocket client object
  * 
  */
+var counter=0;
 
- // #1
+ // #1 Need to use the websocket library
 var WebSocketClient = require('websocket').client;
 
 // #2 Create a WS Client
@@ -39,6 +40,9 @@ client.on('connect', (connection)=>{
         // #6 Filter the events
         switch(event.$class){
             case    'org.acme.airline.flight.FlightCreated':
+                    counter++;
+                    console.log('Event#', counter);
+                    
                     processFlightCreatedEvent(event);
                     break;
             default:
@@ -50,9 +54,12 @@ client.on('connect', (connection)=>{
 // #7 Call connect with URL to the REST Server
 client.connect('ws://localhost:3000');
 
+
+
 // #8 Gets called every time an event is receieved
 function  processFlightCreatedEvent(event){
     console.log('Received event:')
     // Pretty printing the received JSON string
     console.log(JSON.stringify(event,null,4));
+    console.log();
 }

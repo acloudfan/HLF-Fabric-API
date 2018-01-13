@@ -23,8 +23,11 @@ const bnUtil = require('./bn-connection-util');
 bnUtil.cardName='admin@airlinev8';
 bnUtil.connect(main);
 
+var counter = 0;
 function main(error){
 
+    console.log("Event subscription started for: FlightCreated event!!");
+    console.log("Received:")
     // #2 Subscribe to event
     bnUtil.connection.on('event',(event)=>{
         var namespace = event.$namespace;
@@ -36,6 +39,8 @@ function main(error){
         switch(fqn){
             case    'org.acme.airline.flight.FlightCreated':        
                     // #3 Process the event
+                    counter++;
+                    console.log('Event#',counter);
                     processFlightCreatedEvent(fqn, event);
                     break;
             default:    
@@ -54,4 +59,5 @@ function main(error){
 function processFlightCreatedEvent(fqn, event){
     // For demo purpose the information is getting printed on the console
     console.log(fqn, ' ', event.flightId, ' ', event.timestamp, ' ', event.eventId);
+    console.log();
 }
