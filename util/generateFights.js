@@ -22,7 +22,11 @@ bnUtil.connect(main);
 
 
 
-function main(){
+function main(error){
+    if(error){
+        console.log(error)
+        process.exit(1)
+    }
     createFlights('AE101','EWR','SEA',new Date(), 3, 11,00);
     let nextDay = new Date(new Date().getTime()+24*60*60*1000);
     createFlights('AE102','SEA','ATL', nextDay, 3, 14,30);

@@ -11,9 +11,10 @@
   "dependencies": {
     "chai": "^4.1.2",
     "composer-admin": "^0.16.0",
-    "composer-client": "^0.16.0",
+    "composer-client": "^0.16.4",
     "composer-common": "^0.16.0",
     "composer-connector-embedded": "^0.16.0",
+    "grpc": "^1.9.1",
     "websocket": "^1.0.25"
   }
 }
