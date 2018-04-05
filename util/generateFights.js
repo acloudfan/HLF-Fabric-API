@@ -1,4 +1,6 @@
 /**
+ * Composer 0.19.0
+ * 
  * This generates a flight schedule for 6 weeks for 3 flights
  * AE101, AE102, AE103
  * AE101  EWR -> SEA    11:00  AM

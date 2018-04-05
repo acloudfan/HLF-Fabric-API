@@ -2,3 +2,5 @@ node_modules
 temp
 composer-logs
 test
+package-lock.json
+

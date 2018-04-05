@@ -1,4 +1,6 @@
 /**
+ * Composer 0.19.0
+ * 
  * Utility method for cleaning up the flights
  */
 const bnUtil = require('../bn-connection-util');

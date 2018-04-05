@@ -3,6 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Composer 0.19.0
+ * 
  * This is for testing the bn-connection-util.js
  * 
  * Shows how to use the bn-connection-util in your 

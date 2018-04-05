@@ -2,14 +2,14 @@
 
 /**
  * Part of a Hyperledger Fabric Course : http://ACloudFan.com
+ * Composer 0.19.0
+ * https://hyperledger.github.io/composer/latest//business-network/cloud-wallets
  */
-const FileSystemCardStore = require('composer-common').FileSystemCardStore;
+const NetworkCardStoreManager= require('composer-common').NetworkCardStoreManager;
 
+var cardType = { type: 'composer-wallet-filesystem' }
+const cardStore = NetworkCardStoreManager.getCardStore( cardType );
 
-// Create the FileSystemCardStore object that by default 
-// picks the card information from the caller's home directory
-// at ~/.composer
-const cardStore = new FileSystemCardStore();
 
 // Gets all the card
 return cardStore.getAll().then(function(cardMap){

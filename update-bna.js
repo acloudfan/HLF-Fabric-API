@@ -3,6 +3,11 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Composer 0.19.0 : Update not valid anymore
+ * 
+ * https://hyperledger.github.io/composer/latest//api/common-businessnetworkdefinition
+ * https://hyperledger.github.io/composer/latest//api/admin-adminconnection
+ * 
  * Demonstrates the use of admin connection to update an app
  * 
  **** Runtime has already been installed
@@ -18,22 +23,27 @@ const FileSystemCardStore = require('composer-common').FileSystemCardStore;
 const AdminConnection = require('composer-admin').AdminConnection;
 const BusinessNetworkDefinition = require('composer-common').BusinessNetworkDefinition;
 
-const cardNameForNetworkAdmin = "admin@airlinev7";
+const cardNameForPeerAdmin = "PeerAdmin@hlfv1";
+const appName = "test-bna";
 // This where I have the archive file for v2.0 of airlinev7
 // CHANGE THIS DIRECTORY FOR YOUR Model Project
-const bnaDirectory = "C:/Users/Rajeev/Documents/Course/Hyperledger-Course/workspace/HLF-Course-Domain-Model/airlinev7";
-
+const bnaDirectory = "./test-bna/";
+const bnaArchive = "./test-bna/dist/test-bna@0.0.2.bna";
 // 1. Create the AdminConnection instance
-const cardStore = new FileSystemCardStore();
-const cardStoreObj = { cardStore: cardStore };
-const adminConnection = new AdminConnection(cardStoreObj);
+// Composer 0.19.0 change
+// const cardStore = new FileSystemCardStore();
+// const cardStoreObj = { cardStore: cardStore };
+// const adminConnection = new AdminConnection(cardStoreObj);
+
+var cardType = { type: 'composer-wallet-filesystem' }
+const adminConnection = new AdminConnection(cardType);
 
 // 2. Connect using the card for the Network Admin
-return adminConnection.connect(cardNameForNetworkAdmin).then(function(){
+return adminConnection.connect(cardNameForPeerAdmin).then(function(){
     console.log("Admin Connection Successful!!!");
 
     // Update the BNA
-    updateApp();
+    upgradeApp();
 }).catch(function(error){
     console.log(error);
 });
@@ -41,16 +51,22 @@ return adminConnection.connect(cardNameForNetworkAdmin).then(function(){
 /**
  * Deploys a network app using the admin connection
  */
-function updateApp(){
+function upgradeApp(){
     // 3. Create a Business Network Definition object from directory
     var bnaDef = {}
     BusinessNetworkDefinition.fromDirectory(bnaDirectory).then(function(definition){
         bnaDef = definition;
         console.log("Successfully created the definition!!! ",bnaDef.getName())
 
+        // Install the new version of the BNA
+        return adminConnection.install(bnaDef);
+        
+    }).then(()=>{
+
         // 4. Update the application
         // If you do not have the app installed, you will get an error
-        return adminConnection.update(bnaDef);
+        console.log("Install successful")
+        return adminConnection.upgrade(appName, '0.0.2');
 
     }).then(()=>{
 

@@ -3,6 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Composer 0.19.0
+ * 
  * Demostrates the use of factory received in the BN connection using
  * the getFactory( ) method to submit a transaction
  * 
@@ -10,7 +12,7 @@
  * 1. Start the fabric
  * 2. Deploy & start airlinev7
  * 3. Start the REST Server
- * 4. Make sure there is no Flight resource with id="AE101-05-12-2018"
+ * 4. Make sure there is no Flight resource with id="AE101-05-12-2019"
  *    Delete it if you find one - Remember the code for CreateFlight
  *    Transaction has the flightId hardcoded :-)
  * 
@@ -53,10 +55,10 @@ function main(error){
     //    Here is the sample data
     // {
     //     "$class": "org.acme.airline.flight.CreateFlight",
-    //     "flightNumber": "AE101-06-06-2018",
+    //     "flightNumber": "AE101-06-06-2019",
     //     "origin": "MSP",
     //     "destination": "SEA",
-    //     "schedule": "2018-06-06T18:49:58.273Z"
+    //     "schedule": "2019-06-06T18:49:58.273Z"
     // }
 
     // 4. Create an instance of transaction
@@ -64,14 +66,14 @@ function main(error){
         generate: false,
         includeOptionalFields: false
     }
-    let flightId = "AE101-05-06-2018";
+    let flightId = "AE101-05-06-2019";
     let transaction = factory.newTransaction(namespace,transactionType,flightId,options);
 
     // 5. Set up the properties of the transaction object
     transaction.setPropertyValue('flightNumber','AE101');
     transaction.setPropertyValue('origin', 'EWR');
     transaction.setPropertyValue('destination' , 'ATL');
-    transaction.setPropertyValue('schedule' , new Date('2018-10-15T21:44Z'));
+    transaction.setPropertyValue('schedule' , new Date('2019-10-15T21:44Z'));
 
     // 6. Submit the transaction
     return bnUtil.connection.submitTransaction(transaction).then(()=>{
@@ -93,22 +95,22 @@ function main(error){
  * Test Data for adding flight in registry
  {
   "$class": "org.acme.airline.flight.Flight",
-  "flightId": "AE101-05-05-2018",
+  "flightId": "AE101-05-05-2019",
   "flightNumber": "AE101",
   "route": {
     "$class": "org.acme.airline.flight.Route",
     "origin": "ATL",
     "destination": "EWR",
-    "schedule": "2017-12-17T18:49:58.288Z",
+    "schedule": "2019-12-17T18:49:58.288Z",
     "id": "string"
   }
 }
 * Adding flight using the createFlight transaction
 {
   "$class": "org.acme.airline.flight.CreateFlight",
-  "flightNumber": "AE101-06-06-2018",
+  "flightNumber": "AE101-06-06-2019",
   "origin": "MSP",
   "destination": "SEA",
-  "schedule": "2018-06-06T18:49:58.273Z"
+  "schedule": "2019-06-06T18:49:58.273Z"
 }
 */

@@ -1,6 +1,11 @@
 # This is part of a course on Hyperledger Fabric
 # http://ACloudFan.com
 
+# NOTE: Composer 0.19.0 have introduced breaking changes. 
+# April 2018 : I am in the process of updating code 
+#              If you see an issue please send me a note raj at ACloudFan.com
+#              Files that have been updated/tested for 0.19.0 has a comment ontop
+
 How to use this?
 Most of the files may be executed against a local fabric insallation.
 Some samples are coded to work with embedded runtime.

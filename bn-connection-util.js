@@ -3,6 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Composer 0.19.0
+ * 
  * The modules exposes these functions:
  * 
  * 1. connect - takes a callback function as an argument
@@ -23,7 +25,7 @@
     BusinessNetworkConnection : require('composer-client').BusinessNetworkConnection,
     // Used for connect()
     cardName : "admin@airlinev7",
-
+   
     // Holds the Business Network Connection
     connection: {},
 
@@ -31,8 +33,12 @@
     connect : function(callback) {
 
         // Create instance of file system card store
-        const cardStore = new this.cardStore();
-        this.connection = new this.BusinessNetworkConnection({ cardStore: cardStore });
+
+        // Composer 0.19.0 Change
+        //const cardStore = new this.cardStore();
+        //this.connection = new this.BusinessNetworkConnection({ cardStore: cardStore });
+        var cardType = { type: 'composer-wallet-filesystem' }
+        this.connection = new this.BusinessNetworkConnection(cardType);
 
         // Invoke connect
         return this.connection.connect(this.cardName).then(function(){

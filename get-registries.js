@@ -3,6 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Composer 0.19.0
+ * 
  * Demostrates the getter functions for the registries
  * 1. Use the bn-connection-util to connect
  * 2. Get & Print the Asset Registries

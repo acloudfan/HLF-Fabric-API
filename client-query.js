@@ -3,6 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Composer 0.19.0
+ * 
  * Pre-Requisites
  * 1. Launch Fabric - Deploy Aircraft v8
  * 2. Poupulate the flight data ... use utility or REST Server
