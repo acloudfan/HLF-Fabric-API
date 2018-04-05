@@ -2,6 +2,8 @@
   * Part of a course on Hyperledger Fabric: 
  *  http://ACloudFan.com
  * 
+ * Composer 0.19.0
+ * 
  * This is for testing the UT test harness itself :-)
  * 
  * 1. utHarness = require('./ut-harness');
