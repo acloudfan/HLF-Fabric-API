@@ -2,23 +2,32 @@
 
 /**
  * Part of a Hyperledger Fabric Course : http://ACloudFan.com
+ * 
  * Composer 0.19.0
+ * 
  * https://hyperledger.github.io/composer/latest//business-network/cloud-wallets
+ * https://github.com/hyperledger/composer/blob/master/packages/composer-common/lib/cardstore/networkcardstoremanager.js
+ * 
+ * 1. Get the instance of the NetworkCardStoreManager
+ * 2. Get instance of BusinessNetworkCardStore for filesystem based wallet
+ * 3. Get all cards on file system & print the names on console
+ * 4. Get the first card by name
  */
+
+// 1. Get the instance of the NetworkCardStoreManager
 const NetworkCardStoreManager= require('composer-common').NetworkCardStoreManager;
 
-var cardType = { type: 'composer-wallet-filesystem' }
-const cardStore = NetworkCardStoreManager.getCardStore( cardType );
+// 2. Get instance of BusinessNetworkCardStore for filesystem based wallet
+var walletType = { type: 'composer-wallet-filesystem' }
+const cardStore = NetworkCardStoreManager.getCardStore( walletType );
 
-
-// Gets all the card
+// 3. Gets all the card
 return cardStore.getAll().then(function(cardMap){
     // Print all card names
     console.log(cardMap.keys());
 
-    // Get the name of the first card
+    // 4. Get the name of the first card & then retrieve it
     let firstCard = cardMap.keys().next().value
-
     // Get the firstCard - returns a promise so check .then()
     return cardStore.get(firstCard);
 

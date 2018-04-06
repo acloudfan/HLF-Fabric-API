@@ -7,7 +7,7 @@
  */
 var assert = require('chai').assert;
 
-
+// You need to change this to your specific directory
 const utHarness = require('C:/Users/Rajeev/Documents/Course/Hyperledger-Course/workspace/wip/HLF-API/ut-harness.js');
 
 // This points to the model project folder
