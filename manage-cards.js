@@ -9,9 +9,9 @@
  * https://github.com/hyperledger/composer/blob/master/packages/composer-common/lib/cardstore/networkcardstoremanager.js
  * 
  * 1. Get the instance of the NetworkCardStoreManager
- * 2. Get instance of BusinessNetworkCardStore for filesystem based wallet
- * 3. Get all cards on file system & print the names on console
- * 4. Get the first card by name
+ * 2. Create instance of BusinessNetworkCardStore for filesystem based wallet
+ * 3. BusinessNetworkCardStore : Get all cards on file system & print the names on console
+ * 4. BusinessNetworkCardStore :Get the first card by name
  */
 
 // 1. Get the instance of the NetworkCardStoreManager
