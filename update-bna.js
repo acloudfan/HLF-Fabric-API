@@ -19,7 +19,6 @@
  * 4. Update the airlinev7 model in runtime
  * 5. Disconnect
  */
-const FileSystemCardStore = require('composer-common').FileSystemCardStore;
 const AdminConnection = require('composer-admin').AdminConnection;
 const BusinessNetworkDefinition = require('composer-common').BusinessNetworkDefinition;
 
@@ -29,14 +28,11 @@ const appName = "test-bna";
 // CHANGE THIS DIRECTORY FOR YOUR Model Project
 const bnaDirectory = "./test-bna/";
 const bnaArchive = "./test-bna/dist/test-bna@0.0.2.bna";
+
 // 1. Create the AdminConnection instance
 // Composer 0.19.0 change
-// const cardStore = new FileSystemCardStore();
-// const cardStoreObj = { cardStore: cardStore };
-// const adminConnection = new AdminConnection(cardStoreObj);
-
-var cardType = { type: 'composer-wallet-filesystem' }
-const adminConnection = new AdminConnection(cardType);
+var walletType = { type: 'composer-wallet-filesystem' }
+const adminConnection = new AdminConnection(walletType);
 
 // 2. Connect using the card for the Network Admin
 return adminConnection.connect(cardNameForPeerAdmin).then(function(){
