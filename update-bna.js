@@ -23,11 +23,10 @@ const AdminConnection = require('composer-admin').AdminConnection;
 const BusinessNetworkDefinition = require('composer-common').BusinessNetworkDefinition;
 
 const cardNameForPeerAdmin = "PeerAdmin@hlfv1";
-const appName = "test-bna";
+const appName = "airlinev7";
 // This where I have the archive file for v2.0 of airlinev7
 // CHANGE THIS DIRECTORY FOR YOUR Model Project
-const bnaDirectory = "./test-bna/";
-const bnaArchive = "./test-bna/dist/test-bna@0.0.2.bna";
+const bnaDirectory = "/AIRLINE v7 Poroject Folder/";
 
 // 1. Create the AdminConnection instance
 // Composer 0.19.0 change
@@ -38,7 +37,7 @@ const adminConnection = new AdminConnection(walletType);
 return adminConnection.connect(cardNameForPeerAdmin).then(function(){
     console.log("Admin Connection Successful!!!");
 
-    // Update the BNA
+    // Upgrade the BNA version
     upgradeApp();
 }).catch(function(error){
     console.log(error);
