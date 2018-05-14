@@ -27,7 +27,7 @@ const   appToBePinged = "airlinev7";
 
 // 1. Create Admin Connection object for the fabric
 var walletType = { type: 'composer-wallet-filesystem' }
-const adminConnection = new AdminConnection(walletType);
+var adminConnection = new AdminConnection(walletType);
 
 // 2. Initiate a connection as PeerAdmin
 return adminConnection.connect(cardNameForPeerAdmin).then(function(){
@@ -44,25 +44,29 @@ return adminConnection.connect(cardNameForPeerAdmin).then(function(){
 function listBusinessNetwork(){
     // 3. List the network apps
     adminConnection.list().then((networks)=>{
-        console.log("Successfully retrieved the deployed Networks: ",networks);
+        console.log("1. Successfully retrieved the deployed Networks: ",networks);
 
         networks.forEach((businessNetwork) => {
-            console.log('Deployed business network', businessNetwork);
+            console.log('Business Network deployed in Runtime', businessNetwork);
          });
         // 4. Disconnect
-        adminConnection.disconnect();
-        reconnectAsNetworkAdmin();
+        return adminConnection.disconnect().then(function(){
+            reconnectAsNetworkAdmin();
+        });
+
+        
     }).catch((error)=>{
-        console.log(error);
+        console.log("Error=",error);
     });
 }
 
 // Ping the network
 function reconnectAsNetworkAdmin(){
-
+   
     // 5. Reconnect with the card for network admin
-    return adminConnection.connect(cardNameForNetworkAdmin).then(function(){
-        console.log("Network Admin Connected Successfully!!!");
+    return adminConnection.connect(cardNameForNetworkAdmin).then(function(error){
+        
+        console.log("2. Network Admin Connected Successfully!!!");
         // 6. Ping the BNA 
         
         adminConnection.ping(appToBePinged).then(function(response){
@@ -70,8 +74,9 @@ function reconnectAsNetworkAdmin(){
             // 7. Disconnect
             adminConnection.disconnect();
         }).catch((error)=>{
-            console.log(error);
+            console.log("Error=",error);
         });
+
     });
 
     

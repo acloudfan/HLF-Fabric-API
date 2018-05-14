@@ -1,6 +1,10 @@
 # This is part of a course on Hyperledger Fabric
 # http://ACloudFan.com
 
+# NOTE:May 13-2018: Composer 0.19.3 and above are breaking the code due to incompatibility
+# with latest version of grpc (0.11.1) I have hardcoded the version of grpc
+# to (0.10.1) ... will fix once the issue has been resolved by the developers
+
 # NOTE: Composer 0.19.0 have introduced breaking changes. 
 # April 2018 : I am in the process of updating code 
 #              If you see an issue please send me a note raj at ACloudFan.com
