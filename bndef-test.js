@@ -2,7 +2,11 @@
  * BusinessNetworkDefinition
  * https://hyperledger.github.io/composer/latest/api/common-businessnetworkdefinition
  * 
+ * Last Updated: Dec 21, 2018
+ * 
  * Shows how to create an archive from a Directory
+ * 
+ * Expects a folder temp with the tes-bna project setup
  * 
  */
 const BusinessNetworkDefinition = require('composer-common').BusinessNetworkDefinition;

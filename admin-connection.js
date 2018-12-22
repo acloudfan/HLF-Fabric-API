@@ -3,7 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
- * Composer 0.19.0  : Does not require a FileSystemCardStore to be created
+ * Last Updated: Dec 21, 2018
+ * Composer 0.20.5  : Does not require a FileSystemCardStore to be created
  * 
  * https://hyperledger.github.io/composer/latest//api/admin-adminconnection
  * 

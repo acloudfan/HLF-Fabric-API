@@ -3,9 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
- * Last aupdate: Dec 21, 2018
- * 0.20.5  Changes in the use of Card Store & Constructor of
- * BusinessNetworkConnection()
+ * DO NOT USE THIS FILE.
+ * Dec 21, 2018
  * 
  * Demonstrates the use of the business network connection
  * 
@@ -16,22 +15,17 @@
  */
 
 // Need the card store instance
-// 0.20.5 Does not need Card Store object - commented line below
-// const FileSystemCardStore = require('composer-common').FileSystemCardStore;
-
+const FileSystemCardStore = require('composer-common').FileSystemCardStore;
 const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
 // Used as the card for all calls
 var cardName = "admin@airlinev7";
 const   registryId = "org.acme.airline.aircraft.Aircraft";
 
-// v0.20.5 does not require the card store
-// Commented lines below + constructor doesn't require cardStoreObj
 // 1. Create instance of file system card store
-// const cardStore = new FileSystemCardStore();
+const cardStore = new FileSystemCardStore();
 // 2. Connection object for the fabric
-// const cardStoreObj = { cardStore: cardStore };
-
-const bnConnection = new BusinessNetworkConnection();//cardStoreObj);
+const cardStoreObj = { cardStore: cardStore };
+const bnConnection = new BusinessNetworkConnection(cardStoreObj);
 
 // 3. Initiate a connection
 return bnConnection.connect(cardName).then(function(){

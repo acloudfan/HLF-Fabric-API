@@ -6,17 +6,25 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acloudfan/HLF-Fabric-API.git"
+  },
   "author": "raj@acloudfan.com",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acloudfan/HLF-Fabric-API/issues"
+  },
+  "homepage": "https://github.com/acloudfan/HLF-Fabric-API#readme",
   "dependencies": {
-    "chai": "^4.1.2",
-    "composer-admin": "^0.19.0",
-    "composer-cli": "^0.19.0",
-    "composer-client": "^0.19.0",
-    "composer-common": "^0.19.0",
-    "composer-connector-embedded": "^0.19.0",
+    "chai": "^4.2.0",
+    "composer-admin": "^0.20.5",
+    "composer-cli": "^0.20.5",
+    "composer-client": "^0.20.5",
+    "composer-connector-embedded": "^0.20.5",
     "fs": "0.0.1-security",
-    "grpc": "1.10.1",
-    "websocket": "^1.0.25"
+    "grpc": "^1.17.0",
+    "mocha": "^5.2.0",
+    "websocket": "^1.0.28"
   }
 }

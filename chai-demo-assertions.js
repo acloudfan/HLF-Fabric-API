@@ -2,8 +2,13 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Last Updated: Dec 21, 2018
+ * 
  * This demonstrates the use of Chai Assertion Library       
  * http://chaijs.com/
+ * 
+ * Test:
+ * mocha test chai-demo-assertions.js
  * 
  */
 

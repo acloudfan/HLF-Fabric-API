@@ -3,7 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
- * Composer 0.19.0
+ * Composer 0.20.5
+ * Last Updated: Dec 21, 2018
  * 
  * Demostrates the use of factory received in the BN connection using
  * the getFactory( ) method to submit a transaction
@@ -12,6 +13,9 @@
  * 1. Start the fabric
  * 2. Deploy & start airlinev7
  * 3. Start the REST Server
+ *     
+ *    composer-rest-server -c admin@airlinev7 -n never -u true -w true
+ * 
  * 4. Make sure there is no Flight resource with id="AE101-05-12-2019"
  *    Delete it if you find one - Remember the code for CreateFlight
  *    Transaction has the flightId hardcoded :-)

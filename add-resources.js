@@ -3,6 +3,9 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Last Update: Dec 21, 2018
+ * Tested with: 0.20.5
+ * 
  * Sample shows how to use asset registry for adding new instances 
  * of resources. Code creates 2 instances of the Aircraft asset and
  * adds to the AssetRegistry by invoking the addAll() function.

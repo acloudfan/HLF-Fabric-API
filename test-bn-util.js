@@ -3,7 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
- * Composer 0.19.0
+ * Last Updated: Dec 21, 2018
+ * Composer 0.20.5
  * 
  * This is for testing the bn-connection-util.js
  * 

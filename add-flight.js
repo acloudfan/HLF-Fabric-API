@@ -3,6 +3,9 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
+ * Last Tested: Dec 21, 2018
+ * Composer: 0.20.5
+ * 
  * Exercise:
  * Create a new flight resource instance and add it to the Flight Registry
  */

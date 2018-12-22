@@ -3,7 +3,8 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
- * Composer 0.19.0
+ * Last Update: Dec 21, 2018
+ * Tested with 0.20.5
  * 
  * The modules exposes these functions:
  * 
