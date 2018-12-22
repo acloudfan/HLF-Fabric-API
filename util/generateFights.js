@@ -1,5 +1,5 @@
 /**
- * Composer 0.19.0
+ * Tested with Composer 0.20.5
  * 
  * This generates a flight schedule for 6 weeks for 3 flights
  * AE101, AE102, AE103

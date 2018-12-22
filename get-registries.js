@@ -3,7 +3,7 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
- * Composer 0.19.0
+ * Tested with Composer 0.20.5
  * 
  * Demostrates the getter functions for the registries
  * 1. Use the bn-connection-util to connect

@@ -1,5 +1,5 @@
 /**
- * Composer 0.19.0
+ * Tested with Composer 0.20.5
  * 
  * Utility method for cleaning up the flights
  */

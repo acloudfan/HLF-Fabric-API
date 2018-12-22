@@ -2,7 +2,7 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
- * Composer 0.19.0
+ * Tested with Composer 0.20.5
  * 
  * Pre-Requisites
  * 1. Launch Fabric - Deploy Aircraft v8

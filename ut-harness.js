@@ -2,7 +2,7 @@
  * Part of a course on Hyperledger Fabric: 
  * http://ACloudFan.com
  * 
- * Composer 0.19.0
+ * Composer 0.20.5
  * 
  * Takes a model project folder as input. 
  * 

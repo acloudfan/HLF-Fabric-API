@@ -1,7 +1,7 @@
 /**
  * Populates the airline Registries with data
  * 
- * Composer 0.19.0
+ * Tested with Composer 0.20.5
  */
 
 const bnUtil = require('../bn-connection-util');
